@@ -1,0 +1,50 @@
+{
+    "personalSocial": {
+        "label": "Personal Social",
+        "tests": [
+            {
+                "label": "Responder con Sonrisa",
+                "canSkipViaReference": false,
+                "notationNumber": 0,
+                "riskPercentage": 85,
+                "expectedAge": 1
+            }
+        ]
+    },
+    "motorFino": {
+        "label": "Motor Fino - Adaptativo",
+        "tests": [
+            {
+                "label": "Seguir hasta línea Med.",
+                "canSkipViaReference": false,
+                "notationNumber": 0,
+                "riskPercentage": 85,
+                "expectedAge": 1
+            }
+        ]
+    },
+    "lenguaje": {
+        "label": "Lenguaje",
+        "tests": [
+            {
+                "label": "Responder a Campana",
+                "canSkipViaReference": false,
+                "notationNumber": 0,
+                "riskPercentage": 85,
+                "expectedAge": 1
+            }
+        ]
+    },
+    "motorGrande": {
+        "label": "Motor Grande",
+        "tests": [
+            {
+                "label": "Movimientos Iguales",
+                "canSkipViaReference": false,
+                "notationNumber": 0,
+                "riskPercentage": 85,
+                "expectedAge": 1
+            }
+        ]
+    }
+}
