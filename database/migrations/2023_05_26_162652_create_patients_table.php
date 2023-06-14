@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('fullname', 100);
             $table->string('nickname', 25);
             $table->string('state', 25)->default('Internado');
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->date('birthday');
             $table->string('genre', 1);
             $table->timestamps();

@@ -6,6 +6,7 @@ use App\Http\Requests\StorePatientRequest;
 use App\Http\Requests\UpdatePatientRequest;
 use App\Http\Resources\PatientResource;
 use App\Models\Patient;
+use Illuminate\Support\Facades\Auth;
 
 class PatientController extends BaseController
 {
@@ -14,7 +15,7 @@ class PatientController extends BaseController
      */
     public function index()
     {
-        return PatientResource::collection(Patient::paginate(10));
+        return PatientResource::collection(Patient::where('user_id', Auth::user()->id)->paginate(12));
     }
 
     /**
