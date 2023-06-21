@@ -19,7 +19,15 @@ Route::prefix('v1')->group(function () {
     Route::post('login', [AuthController::class, 'login']);
 
     Route::middleware('auth:sanctum')->group(function () {
+        Route::get('user', [AuthController::class, 'index']);
+
         Route::get('logout', [AuthController::class, 'logout']);
+
+        Route::post('register', [AuthController::class, 'register']);
+
+        Route::put('user/{user}', [AuthController::class, 'update']);
+
+        Route::delete('user/{user}', [AuthController::class, 'delete']);
 
         Route::apiResource('patient', PatientController::class);
     });
