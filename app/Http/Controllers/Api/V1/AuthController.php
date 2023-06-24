@@ -14,7 +14,7 @@ class AuthController extends BaseController
 {
     public function index()
     {
-        return UserResource::collection(User::paginate(12));
+        return UserResource::collection(User::where('id', '!=', Auth::user()->id)->paginate(12));
     }
 
     public function login(Request $request)
@@ -29,6 +29,16 @@ class AuthController extends BaseController
             return $this->sendResponse($success, 'User login successfully.');
         } else {
             return $this->sendError('Unauthorised.', ['error' => 'No estás autorizado a ingresar']);
+        }
+    }
+
+    public function me()
+    {
+        try {
+            $user = Auth::user();
+            return $this->sendResponse(UserResource::make($user), 'Tus datos.');
+        } catch (\Throwable $th) {
+            return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde'], 500);
         }
     }
 
@@ -59,7 +69,35 @@ class AuthController extends BaseController
     public function update(UpdateUserRequest $request, User $user)
     {
         try {
+            if ($user->id === Auth::user()->id) {
+                $user->update(array_merge($request->validated(), [
+                    'updated_at' => now()
+                ]));
+                return $this->sendResponse(UserResource::make($user), 'Perfil actualizado.');
+            } else {
+                return $this->sendError('Ups :/', ['error' => 'No tienes permiso para editar este usuario'], 403);
+            }
+        } catch (\Throwable $th) {
+            return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde'], 500);
+        }
+    }
 
+    public function updatePassword(UpdateUserRequest $request, User $user)
+    {
+        try {
+            if ($user->id === Auth::user()->id) {
+                if($request->password){
+                    $user->update([
+                        'password' => Hash::make($request->password),
+                        'updated_at' => now()
+                    ]);
+                    return $this->sendResponse(UserResource::make($user), 'Contraseña Actualizada.');
+                }else{
+                    return $this->sendResponse([], 'Contraseña Invalida.');
+                }                
+            } else {
+                return $this->sendError('Ups :/', ['error' => 'No tienes permiso para editar este usuario'], 403);
+            }
         } catch (\Throwable $th) {
             return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde'], 500);
         }
@@ -68,9 +106,13 @@ class AuthController extends BaseController
     public function delete(User $user)
     {
         try {
-            $user->delete();
+            if (Auth::user()->superadmin) {
+                $user->delete();
 
-            return $this->sendResponse([], 'Usuario eliminado.');
+                return $this->sendResponse([], 'Usuario eliminado.');
+            } else {
+                return $this->sendError('Ups :/', ['error' => 'No tienes permisos'], 403);
+            }
         } catch (\Throwable $th) {
             return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde'], 500);
         }
