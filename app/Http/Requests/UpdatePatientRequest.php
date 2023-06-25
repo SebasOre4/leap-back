@@ -22,7 +22,7 @@ class UpdatePatientRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'fullname' => ['string', 'between:5,100'],
+            'fullname' => ['string', 'between45,100'],
             'nickname' => ['string', 'between:2,25'],
             'birthday' => ['date', 'before_or_equal:' . now()->format('Y-m-d')],
             'genre' => ['string', 'size:1']
@@ -38,7 +38,7 @@ class UpdatePatientRequest extends FormRequest
     {
         return [
             'fullname.string' => 'El Nombre debe ser de tipo texto.',
-            'fullname.between' => 'El Nombre debe tener entre 5 y 100 caracteres.',
+            'fullname.between' => 'El Nombre debe tener entre 4 y 100 caracteres.',
             'nickname.string' => 'El Apodo debe ser de tipo texto.',
             'nickname.between' => 'El Apodo debe tener entre 2 y 25 caracteres',
             'birthday.date' => 'La Fecha de Nacimiento debe ser de tipo Fecha',
