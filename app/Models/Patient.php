@@ -12,7 +12,7 @@ class Patient extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['fullname', 'nickname', 'state', 'birthday', 'genre', 'user_id'];
+    protected $fillable = ['fullname', 'nickname', 'state', 'birthday', 'genre', 'user_id', 'nhc', 'prediagnosis'];
 
     public function treatments(): HasMany
     {
@@ -41,5 +41,10 @@ class Patient extends Model
     public function scopeGenre(Builder $query, $genre): void
     {
         $genre ? $query->where('genre', '=', $genre) : $query;
+    }
+
+    public function scopeNhc(Builder $query, $nhc): void
+    {
+        $nhc ? $query->where('nhc', '=', $nhc) : $query;
     }
 }

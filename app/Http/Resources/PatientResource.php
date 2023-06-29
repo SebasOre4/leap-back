@@ -20,7 +20,9 @@ class PatientResource extends JsonResource
             'nickname' => $this->nickname,
             'birthday' => $this->birthday,
             'state' => $this->state,
-            'genre' => $this->genre
+            'genre' => $this->genre,
+            'nhc' => $this->nhc,
+            'prediagnosis' => $this->prediagnosis
         ];
     }
 }

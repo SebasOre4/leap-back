@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('fullname', 100);
-            $table->string('prediagnosis', 250);
+            $table->string('prediagnosis', 250)->default('n/a');
             $table->string('nhc', 25);
             $table->string('nickname', 25);
             $table->string('state', 25)->default('Internado');

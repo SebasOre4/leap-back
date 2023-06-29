@@ -22,6 +22,7 @@ class PatientFactory extends Factory
             'birthday' => fake()->date(),
             'user_id' => rand(2, 3),
             'genre' => ['F', 'M'][rand(0,1)],
+            'nhc' => rand(0,10000000)
         ];
     }
 }

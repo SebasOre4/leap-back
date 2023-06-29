@@ -25,7 +25,10 @@ class UpdatePatientRequest extends FormRequest
             'fullname' => ['string', 'between45,100'],
             'nickname' => ['string', 'between:2,25'],
             'birthday' => ['date', 'before_or_equal:' . now()->format('Y-m-d')],
-            'genre' => ['string', 'size:1']
+            'genre' => ['string', 'size:1'],
+            'nhc' => ['string', 'regex:/^\d+$/'],
+            'prediagnosis' => ['string', 'between:0,250'],
+            'crono_birthday' => ['date', 'before_or_equal:' . now()->format('Y-m-d')]
         ];
     }
 
@@ -42,9 +45,15 @@ class UpdatePatientRequest extends FormRequest
             'nickname.string' => 'El Apodo debe ser de tipo texto.',
             'nickname.between' => 'El Apodo debe tener entre 2 y 25 caracteres',
             'birthday.date' => 'La Fecha de Nacimiento debe ser de tipo Fecha',
-            'birthday.before_or_equal' => 'La Fecha debe estar antes de la fecha actual',
+            'birthday.before_or_equal' => 'La Fecha de Nacimiento debe estar antes de la fecha actual',
             'genre.string' => 'El género debe ser de tipo texto.',
-            'genre.size' => 'El género debe tener 1 caracter.'
+            'genre.size' => 'El género debe tener 1 caracter.',
+            'nhc.string' => 'El  Nro de historia clínica debe ser de tipo texto.',
+            'nhc.regex' => 'El  Nro de historia clínica debe contener solo números.',
+            'prediagnosis.string' => 'El Prediagnóstico debe ser de tipo texto.',
+            'prediagnosis.between' => 'El Prediagnóstico debe tener entre 0 y 250 caracteres.',
+            'crono_birthday.date' => 'La Edad Cronológica debe ser de tipo Fecha',
+            'crono_birthday.before_or_equal' => 'La Edad Cronológica debe estar antes de la fecha actual',
         ];
     }
 }

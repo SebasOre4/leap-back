@@ -20,6 +20,7 @@ class PatientController extends BaseController
         $nickname = $request->get('nickname');
         $state = $request->get('state');
         $genre = $request->get('genre');
+        $nhc = $request->get('nhc');
 
         return PatientResource::collection(
             Patient::where('user_id', Auth::user()->id)->
@@ -27,6 +28,7 @@ class PatientController extends BaseController
             nickname($nickname)->
             state($state)->
             genre($genre)->
+            nhc($nhc)->
             orderBy('created_at', 'desc')->paginate(12)
         );
     }
