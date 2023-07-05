@@ -153,177 +153,177 @@
         "tests": [
             {
                 "label": "Seguir hasta línea Med.",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 0,
+                "expectedAge": 0.5,
+                "toAge": 1.2
             },
             {
                 "label": "Seguir línea Med.",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 0.9,
+                "expectedAge": 2,
+                "toAge": 2.8
             },
             {
                 "label": "Agarrar sonajero",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 2.6,
+                "expectedAge": 3,
+                "toAge": 3.9
             },
             {
                 "label": "Manos juntas",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 2,
+                "expectedAge": 2.9,
+                "toAge": 4
             },
             {
                 "label": "Seguir 180",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 2.2,
+                "expectedAge": 3.9,
+                "toAge": 4.6
             },
             {
                 "label": "Mirar una pasa",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 2.9,
+                "expectedAge": 4.5,
+                "toAge": 5.2
             },
             {
                 "label": "Alcanzar",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 4.5,
+                "expectedAge": 5.2,
+                "toAge": 5.8
             },
             {
                 "label": "Buscar el hilo",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 5,
+                "expectedAge": 6.1,
+                "toAge": 7.2
             },
             {
                 "label": "Rastrillar pasa",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 5.7,
+                "expectedAge": 6,
+                "toAge": 7.3
             },
             {
                 "label": "Pasar cubo",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 5.1,
+                "expectedAge": 6.5,
+                "toAge": 7.9
             },
             {
                 "label": "Agarrar 2 cubos",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 5.9,
+                "expectedAge": 7.3,
+                "toAge": 9.1
             },
             {
                 "label": "Apretón gordo / dedos",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 7.1,
+                "expectedAge": 9.1,
+                "toAge": 10.2
             },
             {
                 "label": "Golpear 2 cubos manos",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 6.9,
+                "expectedAge": 10,
+                "toAge": 11
             },
             {
                 "label": "Meter cubo en taza",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 9.9,
+                "expectedAge": 12.5,
+                "toAge": 14
             },
             {
                 "label": "Garabatear",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 11.9,
+                "expectedAge": 14,
+                "toAge": 16.5
             },
             {
                 "label": "Botar pasa, demostrado",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 13,
+                "expectedAge": 15.9,
+                "toAge": 19.9
             },
             {
                 "label": "Torre de 2 cubos",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 13.8,
+                "expectedAge": 17,
+                "toAge": 21
             },
             {
                 "label": "Torre de 4 cubos",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 16.6,
+                "expectedAge": 19.9,
+                "toAge": 25
             },
             {
                 "label": "Torre de 6 cubos",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 19.85,
+                "expectedAge": 25,
+                "toAge": 32
             },
             {
                 "label": "Imitar linea vertical",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 25,
+                "expectedAge": 33,
+                "toAge": 39
             },
             {
                 "label": "Torre de 8 cubos",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 23,
+                "expectedAge": 33,
+                "toAge": 41
             },
             {
                 "label": "Menearse gordo",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 31,
+                "expectedAge": 40,
+                "toAge": 46
             },
             {
                 "label": "Copiar círculo",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 37,
+                "expectedAge": 43,
+                "toAge": 49
             },
             {
                 "label": "Dibujar personas 3 partes",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 40,
+                "expectedAge": 50,
+                "toAge": 56
             },
             {
                 "label": "Copiar +",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 41,
+                "expectedAge": 51,
+                "toAge": 57
             },
             {
                 "label": "Escoger línea más larga",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 36,
+                "expectedAge": 48,
+                "toAge": 63
             },
             {
                 "label": "Copiar cuadrado demostrar",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 48,
+                "expectedAge": 60,
+                "toAge": 72
             },
             {
                 "label": "Dibujar pesonas 6 partes",
-                "fromAge": 85,
-                "expectedAge": 1,
-                "toAge": 1
+                "fromAge": 49,
+                "expectedAge": 62,
+                "toAge": 72
             },
             {
                 "label": "Copiar rectángulo",
                 "fromAge": 85,
                 "expectedAge": 1,
-                "toAge": 1
+                "toAge": 72
             }
         ]
     },
