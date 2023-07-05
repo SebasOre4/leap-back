@@ -3,11 +3,148 @@
         "label": "Personal Social",
         "tests": [
             {
-                "label": "Responder con Sonrisa",
-                "canSkipViaReference": false,
-                "notationNumber": 0,
-                "riskPercentage": 85,
-                "expectedAge": 1
+                "label": "Responder con sonrisa",
+                "fromAge": 0.5,
+                "expectedAge": 1,
+                "toAge": 1.8
+            },
+            {
+                "label": "Sonreir espontaneamente",
+                "fromAge": 0.1,
+                "expectedAge": 1.2,
+                "toAge": 2
+            },
+            {
+                "label": "Mirarse las manos",
+                "fromAge": 0.9,
+                "expectedAge": 3,
+                "toAge": 4
+            },
+            {
+                "label": "Alcanzar juguete",
+                "fromAge": 4,
+                "expectedAge": 5,
+                "toAge": 6
+            },
+            {
+                "label": "Darse / Comer",
+                "fromAge": 4.8,
+                "expectedAge": 6,
+                "toAge": 7
+            },
+            {
+                "label": "Aplaudir",
+                "fromAge": 7,
+                "expectedAge": 10.1,
+                "toAge": 11.2
+            },
+            {
+                "label": "Indicar deseos",
+                "fromAge": 7.1,
+                "expectedAge": 9.4,
+                "toAge": 13.2
+            },
+            {
+                "label": "Saludar adios",
+                "fromAge": 6.8,
+                "expectedAge": 9.9,
+                "toAge": 14
+            },
+            {
+                "label": "Jugar pelota",
+                "fromAge": 9.5,
+                "expectedAge": 12,
+                "toAge": 15.9
+            },
+            {
+                "label": "Imitar actividades",
+                "fromAge": 10,
+                "expectedAge": 12.5,
+                "toAge": 13
+            },
+            {
+                "label": "Beber en una taza",
+                "fromAge": 8.9,
+                "expectedAge": 15,
+                "toAge": 17
+            },
+            {
+                "label": "Ayudar en casa",
+                "fromAge": 12.8,
+                "expectedAge": 15.8,
+                "toAge": 17.1
+            },
+            {
+                "label": "Usar cuchara / tenedor",
+                "fromAge": 12.9,
+                "expectedAge": 17.1,
+                "toAge": 20
+            },
+            {
+                "label": "Quitarse la ropa",
+                "fromAge": 13.1,
+                "expectedAge": 20,
+                "toAge": 24
+            },
+            {
+                "label": "Dar de comer a muñeca",
+                "fromAge": 15,
+                "expectedAge": 19,
+                "toAge": 24.1
+            },
+            {
+                "label": "Ponerse la ropa",
+                "fromAge": 20.1,
+                "expectedAge": 27,
+                "toAge": 30
+            },
+            {
+                "label": "Cepillarse los dientes con ayuda",
+                "fromAge": 16,
+                "expectedAge": 23,
+                "toAge": 33
+            },
+            {
+                "label": "Lavarse / secarse las manos",
+                "fromAge": 19,
+                "expectedAge": 26,
+                "toAge": 38
+            },
+            {
+                "label": "Nombrar amigo",
+                "fromAge": 27,
+                "expectedAge": 34,
+                "toAge": 38
+            },
+            {
+                "label": "Ponerse camiseta",
+                "fromAge": 27,
+                "expectedAge": 33,
+                "toAge": 42
+            },
+            {
+                "label": "Vestirse sin ayuda",
+                "fromAge": 26,
+                "expectedAge": 48,
+                "toAge": 1
+            },
+            {
+                "label": "Jugar juegos / naipes",
+                "fromAge": 33,
+                "expectedAge": 50,
+                "toAge": 59
+            },
+            {
+                "label": "Cepillarse dientes sin ayuda",
+                "fromAge": 31,
+                "expectedAge": 51,
+                "toAge": 60
+            },
+            {
+                "label": "Preparar cereal",
+                "fromAge": 35,
+                "expectedAge": 54,
+                "toAge": 61
             }
         ]
     },
@@ -16,10 +153,177 @@
         "tests": [
             {
                 "label": "Seguir hasta línea Med.",
-                "canSkipViaReference": false,
-                "notationNumber": 0,
-                "riskPercentage": 85,
-                "expectedAge": 1
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Seguir línea Med.",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Agarrar sonajero",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Manos juntas",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Seguir 180",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Mirar una pasa",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Alcanzar",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Buscar el hilo",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Rastrillar pasa",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Pasar cubo",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Agarrar 2 cubos",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Apretón gordo / dedos",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Golpear 2 cubos manos",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Meter cubo en taza",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Garabatear",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Botar pasa, demostrado",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Torre de 2 cubos",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Torre de 4 cubos",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Torre de 6 cubos",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Imitar linea vertical",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Torre de 8 cubos",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Menearse gordo",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Copiar círculo",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Dibujar personas 3 partes",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Copiar +",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Escoger línea más larga",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Copiar cuadrado demostrar",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Dibujar pesonas 6 partes",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
+            },
+            {
+                "label": "Copiar rectángulo",
+                "fromAge": 85,
+                "expectedAge": 1,
+                "toAge": 1
             }
         ]
     },
@@ -28,10 +332,237 @@
         "tests": [
             {
                 "label": "Responder a Campana",
-                "canSkipViaReference": false,
-                "notationNumber": 0,
-                "riskPercentage": 85,
-                "expectedAge": 1
+                "fromAge": 0,
+                "expectedAge": 0,
+                "toAge": 0.5
+            },
+            {
+                "label": "Vocalizar",
+                "fromAge": 0,
+                "expectedAge": 0,
+                "toAge": 0.9
+            },
+            {
+                "label": "OOO / AAA",
+                "fromAge": 0.7,
+                "expectedAge": 1.6,
+                "toAge": 2.7
+            },
+            {
+                "label": "Reirse",
+                "fromAge": 1.5,
+                "expectedAge": 2.6,
+                "toAge": 3.2
+            },
+            {
+                "label": "Chillar",
+                "fromAge": 1.5,
+                "expectedAge": 2.8,
+                "toAge": 4.3
+            },
+            {
+                "label": "Volver hacia sonajero",
+                "fromAge": 2.9,
+                "expectedAge": 4.8,
+                "toAge": 5.6
+            },
+            {
+                "label": "Volver hacia voz",
+                "fromAge": 3.6,
+                "expectedAge": 5.7,
+                "toAge": 6.8
+            },
+            {
+                "label": "Sílabas sencillas",
+                "fromAge": 4.8,
+                "expectedAge": 6,
+                "toAge": 7.5
+            },
+            {
+                "label": "Imitar sonidos del lenguaje",
+                "fromAge": 3,
+                "expectedAge": 6,
+                "toAge": 8.8
+            },
+            {
+                "label": "Papá / mamá no específicos",
+                "fromAge": 5.8,
+                "expectedAge": 7.8,
+                "toAge": 9.1
+            },
+            {
+                "label": "Sílabas combinadas",
+                "fromAge": 5.9,
+                "expectedAge": 7.5,
+                "toAge": 10
+            },
+            {
+                "label": "Ga Ge Gi",
+                "fromAge": 5.8,
+                "expectedAge": 8.1,
+                "toAge": 12
+            },
+            {
+                "label": "Papá / mamá específicos",
+                "fromAge": 6.9,
+                "expectedAge": 11,
+                "toAge": 13.1
+            },
+            {
+                "label": "Una palabra",
+                "fromAge": 9.7,
+                "expectedAge": 13.1,
+                "toAge": 15
+            },
+            {
+                "label": "Dos palabras",
+                "fromAge": 10.7,
+                "expectedAge": 14.7,
+                "toAge": 16.7
+            },
+            {
+                "label": "Tres palabras",
+                "fromAge": 11.5,
+                "expectedAge": 15.9,
+                "toAge": 17.7
+            },
+            {
+                "label": "Cinco palabras",
+                "fromAge": 13.8,
+                "expectedAge": 17.7,
+                "toAge": 20.5
+            },
+            {
+                "label": "Indicar 2 dibujos",
+                "fromAge": 17.2,
+                "expectedAge": 20.2,
+                "toAge": 23.5
+            },
+            {
+                "label": "Conbinar palabras",
+                "fromAge": 17,
+                "expectedAge": 20,
+                "toAge": 26
+            },
+            {
+                "label": "Nombrar 1 dibujo",
+                "fromAge": 18,
+                "expectedAge": 22.5,
+                "toAge": 28
+            },
+            {
+                "label": "Partes / cuerpos",
+                "fromAge": 18.1,
+                "expectedAge": 22.9,
+                "toAge": 29
+            },
+            {
+                "label": "Indicar 4 dibujos",
+                "fromAge": 19.8,
+                "expectedAge": 24,
+                "toAge": 31
+            },
+            {
+                "label": "Habla medio entendible",
+                "fromAge": 17.1,
+                "expectedAge": 27,
+                "toAge": 34
+            },
+            {
+                "label": "Nombrar 4 dibujos",
+                "fromAge": 23,
+                "expectedAge": 30,
+                "toAge": 34
+            },
+            {
+                "label": "Saber 2 acciones",
+                "fromAge": 23.5,
+                "expectedAge": 32,
+                "toAge": 39
+            },
+            {
+                "label": "Saber 2 adjetivos",
+                "fromAge": 31,
+                "expectedAge": 36,
+                "toAge": 43
+            },
+            {
+                "label": "Nombrar 1 color",
+                "fromAge": 29,
+                "expectedAge": 37,
+                "toAge": 45
+            },
+            {
+                "label": "Uso de 2 objetos",
+                "fromAge": 31,
+                "expectedAge": 39,
+                "toAge": 46
+            },
+            {
+                "label": "Contar cubos",
+                "fromAge": 33,
+                "expectedAge": 41,
+                "toAge": 47
+            },
+            {
+                "label": "Uso de 2 objetos",
+                "fromAge": 33,
+                "expectedAge": 41,
+                "toAge": 49
+            },
+            {
+                "label": "Saber 4 acciones",
+                "fromAge": 31,
+                "expectedAge": 43.5,
+                "toAge": 49
+            },
+            {
+                "label": "Habla todo entendible",
+                "fromAge": 23.2,
+                "expectedAge": 40,
+                "toAge": 51
+            },
+            {
+                "label": "Entender 4 preposiciones",
+                "fromAge": 33,
+                "expectedAge": 46,
+                "toAge": 56
+            },
+            {
+                "label": "Nombrar 4 colores",
+                "fromAge": 36,
+                "expectedAge": 51,
+                "toAge": 58
+            },
+            {
+                "label": "Definir 5 palabras",
+                "fromAge": 39,
+                "expectedAge": 55,
+                "toAge": 64
+            },
+            {
+                "label": "Saber 3 adjetivos",
+                "fromAge": 34,
+                "expectedAge": 46,
+                "toAge": 64
+            },
+            {
+                "label": "Contar 5 cubos",
+                "fromAge": 49,
+                "expectedAge": 57.5,
+                "toAge": 64
+            },
+            {
+                "label": "Contrarios - 2",
+                "fromAge": 44,
+                "expectedAge": 60,
+                "toAge": 68
+            },
+            {
+                "label": "Definir 7 palabras",
+                "fromAge": 56,
+                "expectedAge": 67,
+                "toAge": 72
             }
         ]
     },
@@ -39,11 +570,196 @@
         "label": "Motor Grande",
         "tests": [
             {
-                "label": "Movimientos Iguales",
-                "canSkipViaReference": false,
-                "notationNumber": 0,
-                "riskPercentage": 85,
-                "expectedAge": 1
+                "label": "Movimientos iguales",
+                "fromAge": 0,
+                "expectedAge": 0,
+                "toAge": 0.25
+            },
+            {
+                "label": "Levantar cabeza",
+                "fromAge": 0,
+                "expectedAge": 0,
+                "toAge": 0.5
+            },
+            {
+                "label": "Cabeza levantada 45°",
+                "fromAge": 0,
+                "expectedAge": 1.7,
+                "toAge": 2.8
+            },
+            {
+                "label": "Cabeza levantada 90°",
+                "fromAge": 1.25,
+                "expectedAge": 2.2,
+                "toAge": 3.65
+            },
+            {
+                "label": "Sentarse cabeza firme",
+                "fromAge": 1.4,
+                "expectedAge": 2.3,
+                "toAge": 3.8
+            },
+            {
+                "label": "Pesarse en piernas",
+                "fromAge": 1.8,
+                "expectedAge": 3.3,
+                "toAge": 4.5
+            },
+            {
+                "label": "Pecho arriba apoyo en brazos",
+                "fromAge": 2.7,
+                "expectedAge": 4,
+                "toAge": 4.7
+            },
+            {
+                "label": "Voltearse",
+                "fromAge": 2.1,
+                "expectedAge": 4.3,
+                "toAge": 5.5
+            },
+            {
+                "label": "Levantar a sentar no retraso / cabeza",
+                "fromAge": 3,
+                "expectedAge": 5,
+                "toAge": 7
+            },
+            {
+                "label": "Sentarse sin apoyo",
+                "fromAge": 5.5,
+                "expectedAge": 6.1,
+                "toAge": 7
+            },
+            {
+                "label": "De pie apoyandose en Algo",
+                "fromAge": 6.7,
+                "expectedAge": 8,
+                "toAge": 8.8
+            },
+            {
+                "label": "Ponerse de pie",
+                "fromAge": 8,
+                "expectedAge": 9,
+                "toAge": 9.8
+            },
+            {
+                "label": "Sentarde se otra post",
+                "fromAge": 7.9,
+                "expectedAge": 9.1,
+                "toAge": 10
+            },
+            {
+                "label": "De pie 2 seg",
+                "fromAge": 9.5,
+                "expectedAge": 11,
+                "toAge": 12
+            },
+            {
+                "label": "De pie solo",
+                "fromAge": 10.5,
+                "expectedAge": 12.8,
+                "toAge": 13.9
+            },
+            {
+                "label": "Agacharse encoger",
+                "fromAge": 11,
+                "expectedAge": 13.1,
+                "toAge": 14.9
+            },
+            {
+                "label": "Caminar bien",
+                "fromAge": 11,
+                "expectedAge": 13.1,
+                "toAge": 15.1
+            },
+            {
+                "label": "Caminar para atras",
+                "fromAge": 12.2,
+                "expectedAge": 15,
+                "toAge": 16.7
+            },
+            {
+                "label": "Correr",
+                "fromAge": 13.9,
+                "expectedAge": 17.5,
+                "toAge": 21
+            },
+            {
+                "label": "Subir escalera",
+                "fromAge": 14,
+                "expectedAge": 18,
+                "toAge": 29
+            },
+            {
+                "label": "Pelota hacia delante",
+                "fromAge": 15.9,
+                "expectedAge": 20,
+                "toAge": 23
+            },
+            {
+                "label": "Saltar",
+                "fromAge": 20,
+                "expectedAge": 27,
+                "toAge": 30
+            },
+            {
+                "label": "Tirar pelota sobre mano",
+                "fromAge": 17,
+                "expectedAge": 24,
+                "toAge": 36
+            },
+            {
+                "label": "Salto de longitud",
+                "fromAge": 28,
+                "expectedAge": 34,
+                "toAge": 37
+            },
+            {
+                "label": "Equilibrio cada pie 1 seg",
+                "fromAge": 27,
+                "expectedAge": 33,
+                "toAge": 40
+            },
+            {
+                "label": "Equilibrio cada pie 2 seg",
+                "fromAge": 32,
+                "expectedAge": 42,
+                "toAge": 48
+            },
+            {
+                "label": "Saltar 1 pie",
+                "fromAge": 38,
+                "expectedAge": 44,
+                "toAge": 50
+            },
+            {
+                "label": "Equilibrio cada pie 3 seg",
+                "fromAge": 32,
+                "expectedAge": 46,
+                "toAge": 54
+            },
+            {
+                "label": "Equilibrio cada pie 4 seg",
+                "fromAge": 41,
+                "expectedAge": 54,
+                "toAge": 60
+            },
+            {
+                "label": "Equilibrio cada pie 5 seg",
+                "fromAge": 45,
+                "expectedAge": 58,
+                "toAge": 67
+            },
+            {
+                "label": "Caminar talón / dedo",
+                "fromAge": 48,
+                "expectedAge": 60,
+                "toAge": 68
+            },
+            {
+                "label": "equilibrio cada pie 6 seg",
+                "fromAge": 50,
+                "expectedAge": 63,
+                "toAge": 72
             }
         ]
     }
