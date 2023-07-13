@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Requests\StoreDiagnosisRequest;
 use App\Http\Requests\UpdateDiagnosisRequest;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Diagnosis;
 
 class DiagnosisController extends BaseController
@@ -16,12 +17,10 @@ class DiagnosisController extends BaseController
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function denverTest()
     {
-        //
+        $data = json_decode(Storage::get('public/denver/denver-test.json'), true);
+        return $this->sendResponse($data, 'Denver test found.');
     }
 
     /**

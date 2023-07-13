@@ -18,7 +18,7 @@ class StorePatientRequest extends FormRequest
             'genre' => ['required', 'string', 'size:1'],
             'nhc' => ['required', 'string', 'regex:/^\d+$/'],
             'prediagnosis' => ['string', 'between:0,250'],
-            'crono_birthday' => ['date', 'before_or_equal:' . now()->format('Y-m-d')]
+            'crono_birthday' => ['nullable', 'date', 'before_or_equal:' . now()->format('Y-m-d')]
         ];
     }
 

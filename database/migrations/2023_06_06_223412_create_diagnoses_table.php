@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('diagnoses', function (Blueprint $table) {
             $table->id();
             $table->json('denver_test');
+            $table->string('recomendations', 500)->default('n/a');
+            $table->string('result', 10);
             $table->timestamps();
         });
     }

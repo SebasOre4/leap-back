@@ -12,7 +12,7 @@ class Patient extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['fullname', 'nickname', 'state', 'birthday', 'genre', 'user_id', 'nhc', 'prediagnosis'];
+    protected $fillable = ['fullname', 'nickname', 'state', 'birthday', 'genre', 'user_id', 'nhc', 'prediagnosis', 'crono_birthday'];
 
     public function treatments(): HasMany
     {
