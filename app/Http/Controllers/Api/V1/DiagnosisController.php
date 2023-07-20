@@ -4,19 +4,14 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Requests\StoreDiagnosisRequest;
 use App\Http\Requests\UpdateDiagnosisRequest;
+use App\Http\Resources\DiagnosisResource;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Diagnosis;
+use App\Models\Patient;
+use App\Models\Treatment;
 
 class DiagnosisController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
     public function denverTest()
     {
         $data = json_decode(Storage::get('public/denver/denver-test.json'), true);
@@ -26,9 +21,42 @@ class DiagnosisController extends BaseController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDiagnosisRequest $request)
+    public function diagnosePatient(StoreDiagnosisRequest $request, Patient $patient)
     {
-        //
+        try {
+            
+            $diagnosis = Diagnosis::create($request->validated());
+            $treatment = Treatment::create([
+                'patient_id' => $patient->id,
+                'initial_diagnoses_id' => $diagnosis->id,
+                'current' => true
+            ]);
+            $patient->update([
+                'state' => 'En tratamiento SJ'
+            ]);
+
+            return $this->sendResponse(new DiagnosisResource($diagnosis), 'Diagnóstico creado exitosamente.');
+        } catch (\Throwable $th) {
+            return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde'], 500);
+        }
+    }
+
+    public function dischargePatient(StoreDiagnosisRequest $request, Patient $patient, Treatment $treatment)
+    {
+        try {
+            $diagnosis = Diagnosis::create($request->validated());
+            $treatment->update([
+                'final_diagnoses_id' => $diagnosis->id,
+                'current' => false                
+            ]);
+            $patient->update([
+                'state' => 'Dado de alta'
+            ]);
+
+            return $this->sendResponse(new DiagnosisResource($diagnosis), 'Diagnóstico creado exitosamente.');
+        } catch (\Throwable $th) {
+            return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde'], 500);
+        }
     }
 
     /**
@@ -36,30 +64,10 @@ class DiagnosisController extends BaseController
      */
     public function show(Diagnosis $diagnosis)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Diagnosis $diagnosis)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateDiagnosisRequest $request, Diagnosis $diagnosis)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Diagnosis $diagnosis)
-    {
-        //
+        try {
+            return $this->sendResponse(DiagnosisResource::make($diagnosis), 'Diagnóstico encontrado.');
+        } catch (\Throwable $th) {
+            return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde'], 500);
+        }
     }
 }

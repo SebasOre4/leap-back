@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\PatientController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\DiagnosisController;
+use App\Http\Controllers\Api\V1\TreatmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,18 @@ Route::prefix('v1')->group(function () {
 
         Route::delete('user/{user}', [AuthController::class, 'delete']);
 
+        Route::post('diagnose-patient/{patient}', [DiagnosisController::class, 'diagnosePatient']);
+
+        Route::post('discharge-patient/{patient}/{treatment}', [DiagnosisController::class, 'dischargePatient']);
+
         Route::apiResource('patient', PatientController::class);
+
+        Route::get('current-treatment/{patient}', [TreatmentController::class, 'currentTreatment']);
+
+        Route::put('treatment/{treatment}', [TreatmentController::class, 'updateTreatment']);
+
+        Route::get('treatment-history/{patient}', [TreatmentController::class, 'treatmentHistory']);
+
+        Route::get('dash-graphs', [AuthController::class, 'docDashInfo']);
     });
 });

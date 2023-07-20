@@ -16,6 +16,7 @@ return new class extends Migration
             $table->json('denver_test');
             $table->string('recomendations', 500)->default('n/a');
             $table->string('result', 10);
+            $table->double('evaluated_age');
             $table->timestamps();
         });
     }

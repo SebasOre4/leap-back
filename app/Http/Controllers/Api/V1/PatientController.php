@@ -50,8 +50,9 @@ class PatientController extends BaseController
      */
     public function show(Patient $patient)
     {
+        return $this->sendResponse(PatientResource::make($patient), 'Paciente encontrado.');
+
         try {
-            return $this->sendResponse(PatientResource::make($patient), 'Paciente encontrado.');
         } catch (\Throwable $th) {
             return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde'], 500);
         }

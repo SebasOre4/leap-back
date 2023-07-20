@@ -4,63 +4,35 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Requests\StoreTreatmentRequest;
 use App\Http\Requests\UpdateTreatmentRequest;
+use App\Http\Resources\TreatmentResource;
+use App\Models\Patient;
 use App\Models\Treatment;
 
 class TreatmentController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function currentTreatment(Patient $patient)
     {
-        //
+        $currentTreatment = Treatment::where('patient_id', $patient->id)->where('current', true)->firstOrFail();
+            return $this->sendResponse(new TreatmentResource($currentTreatment), 'Tratamiento actual creado exitosamente.');
+        try {
+            
+        } catch (\Throwable $th) {
+            return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde', 'msg' => $th], 500);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function updateTreatment(UpdateTreatmentRequest $request, Treatment $treatment){
+        $treatment->update($request->validated());
+
+        return $this->sendResponse(new TreatmentResource($treatment), 'Datos de tratamiento actualizados.');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreTreatmentRequest $request)
+    public function treatmentHistory(Patient $patient)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Treatment $treatment)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Treatment $treatment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateTreatmentRequest $request, Treatment $treatment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Treatment $treatment)
-    {
-        //
+        try {
+            return TreatmentResource::collection(Treatment::where('patient_id', $patient->id)->where('current', false)->orderBy('created_at', 'DESC')->paginate(10));
+        } catch (\Throwable $th) {
+            return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde', 'msg' => $th], 500);
+        }
     }
 }

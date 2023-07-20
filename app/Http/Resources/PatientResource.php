@@ -23,7 +23,8 @@ class PatientResource extends JsonResource
             'state' => $this->state,
             'genre' => $this->genre,
             'nhc' => $this->nhc,
-            'prediagnosis' => $this->prediagnosis
+            'prediagnosis' => $this->prediagnosis,
+            'current_treatment_id' => $this->currentTreatment?->id
         ];
     }
 }

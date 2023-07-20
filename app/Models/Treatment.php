@@ -12,18 +12,18 @@ class Treatment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['patient_id', 'initial_diagnoses_id', 'final_diagnoses_id', 'external_treatment'];
+    protected $fillable = ['patient_id', 'initial_diagnoses_id', 'final_diagnoses_id', 'external_treatment', 'current'];
 
     public function patient(): BelongsTo {
-        return $this->belongsTo(Patient::class. 'patient_id', 'id');
+        return $this->belongsTo(Patient::class, 'patient_id', 'id');
     }
 
     public function initialDiagnosis(): HasOne {
-        return $this->hasOne(Diagnosis::class. 'initial_diagnoses_id', 'id');
+        return $this->hasOne(Diagnosis::class, 'id', 'initial_diagnoses_id');
     }
 
     public function finalDiagnosis(): HasOne {
-        return $this->hasOne(Diagnosis::class. 'final_diagnoses_id', 'id');
+        return $this->hasOne(Diagnosis::class, 'id', 'final_diagnoses_id');
     }
 
     public function exercises(): HasMany

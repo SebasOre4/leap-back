@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Builder;
 
 class Patient extends Model
@@ -19,8 +20,14 @@ class Patient extends Model
         return $this->hasMany(Treatment::class, 'patient_id', 'id');
     }
 
-    public function user(): BelongsTo {
-        return $this->belongsTo(User::class. 'user_id', 'id');
+    public function currentTreatment(): HasOne
+    {
+        return $this->hasOne(Treatment::class, 'patient_id', 'id')->where('current', true);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 
     public function scopeFullname(Builder $query, $fullname): void

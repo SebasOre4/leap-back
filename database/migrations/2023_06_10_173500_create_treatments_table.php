@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('patient_id')->references('id')->on('patients');
             $table->foreignId('initial_diagnoses_id')->references('id')->on('diagnoses');
             $table->foreignId('final_diagnoses_id')->nullable()->references('id')->on('diagnoses');
-            $table->json('external_treatment');
+            $table->json('external_treatment')->nullable();
+            $table->boolean('current');
             $table->timestamps();
         });
     }
