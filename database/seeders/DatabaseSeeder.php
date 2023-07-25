@@ -38,6 +38,6 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now()
         ]);
 
-        Patient::factory(100)->create();
+        Patient::factory(200)->create();
     }
 }

@@ -9,5 +9,5 @@ class Diagnosis extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'denver_test', 'recomendations', 'result', 'evaluated_age'];
+    protected $fillable = ['id', 'denver_test', 'recomendations', 'result', 'evaluated_age', 'created_at'];
 }

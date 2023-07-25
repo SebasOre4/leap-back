@@ -45,6 +45,8 @@ Route::prefix('v1')->group(function () {
 
         Route::get('current-treatment/{patient}', [TreatmentController::class, 'currentTreatment']);
 
+        Route::get('current-treatments', [TreatmentController::class, 'activeTreatments']);
+
         Route::put('treatment/{treatment}', [TreatmentController::class, 'updateTreatment']);
 
         Route::get('treatment-history/{patient}', [TreatmentController::class, 'treatmentHistory']);

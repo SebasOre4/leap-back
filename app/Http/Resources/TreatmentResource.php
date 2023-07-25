@@ -17,6 +17,7 @@ class TreatmentResource extends JsonResource
         return [
             'id' => $this->id,
             'patient_id' => $this->patient_id,
+            'patient' => new PatientResource($this->whenLoaded('patient')),
             'initial_diagnoses_id' => $this->initial_diagnoses_id,
             'initial_diagnosis' => new DiagnosisResource($this->initialDiagnosis),
             'final_diagnosis_id' => $this->final_diagnoses_id,
