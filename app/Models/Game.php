@@ -9,5 +9,5 @@ class Game extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'default_config'];
+    protected $fillable = ['name', 'default_config', 'created_At'];
 }

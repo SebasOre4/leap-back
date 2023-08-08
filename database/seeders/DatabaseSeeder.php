@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Patient;
 use App\Models\User;
+use App\Models\Game;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -25,8 +26,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Doc 1',
-            'email' => 'doc1@leap.com',
+            'name' => 'Andres Molina',
+            'email' => 'andresmol2006@yahoo.es',
             'password' => Hash::make('Leap@2022.'),
             'email_verified_at' => now()
         ]);
@@ -38,6 +39,21 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now()
         ]);
 
-        Patient::factory(200)->create();
+        Game::create([
+            'name' => 'Rompecabezas',
+            'default_config' => '{"name": "Rompecabezas","map": "BoatMap","config": {"dificulty": ["Facil", "Normal", "Difícil"],"music": [false, true],"time": [1, 1.5, 2],"distractors": [0, 1, 2, 3]}}',
+        ]);
+
+        Game::create([
+            'name' => 'FruitNinja',
+            'default_config' => '{"name": "FruitNinja","map": "CascadeMap","config": {"dificulty": ["Facil", "Normal", "Difícil"],"music": [false, true],"time": [1, 1.5, 2],"distractors": [0, 1, 2, 3]}}',
+        ]);
+
+        Game::create([
+            'name' => 'Torre de Cubos',
+            'default_config' => '{"name": "Torre de Cubos","map": "MountainMap","config": {"dificulty": ["Facil", "Normal", "Difícil"],"music": [false, true],"time": [1, 1.5, 2],"distractors": [0, 1, 2, 3]}}',
+        ]);
+
+        // Patient::factory(200)->create();
     }
 }
