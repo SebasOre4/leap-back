@@ -41,17 +41,17 @@ class DatabaseSeeder extends Seeder
 
         Game::create([
             'name' => 'Rompecabezas',
-            'default_config' => '{"name": "Rompecabezas","map": "BoatMap","config": {"dificulty": ["Facil", "Normal", "Difícil"],"music": [false, true],"time": [1, 1.5, 2],"distractors": [0, 1, 2, 3]}}',
+            'default_config' => '{"name": "Rompecabezas","map": "BoatMap","config": {"dificulty": [{"label": "Facil","val": "Facil"},{"label": "Normal","val": "Normal"},{"label": "Dificil","val": "Dificil"}],"music": [{"label": "Si","val": true},{"label": "No","val": false}],"time": [{"label": "1 minutos","val": 1},{"label": "1.5 minutos","val": 1.5},{"label": "2 minutos","val": 2}],"distractors": [{"label": "0 distractores","val": 0},{"label": "1 distractores","val": 1},{"label": "2 distractores","val": 2},{"label": "3 distractores","val": 3}]}}',
         ]);
 
         Game::create([
             'name' => 'FruitNinja',
-            'default_config' => '{"name": "FruitNinja","map": "CascadeMap","config": {"dificulty": ["Facil", "Normal", "Difícil"],"music": [false, true],"time": [1, 1.5, 2],"distractors": [0, 1, 2, 3]}}',
+            'default_config' => '{"name": "FruitNinja","map": "CascadeMap","config": {"dificulty": [{"label": "Facil","val": "Facil"},{"label": "Normal","val": "Normal"},{"label": "Dificil","val": "Dificil"}],"music": [{"label": "Si","val": true},{"label": "No","val": false}],"time": [{"label": "1 minutos","val": 1},{"label": "1.5 minutos","val": 1.5},{"label": "2 minutos","val": 2}],"distractors": [{"label": "0 distractores","val": 0},{"label": "1 distractores","val": 1},{"label": "2 distractores","val": 2},{"label": "3 distractores","val": 3}]}}',
         ]);
 
         Game::create([
             'name' => 'Torre de Cubos',
-            'default_config' => '{"name": "Torre de Cubos","map": "MountainMap","config": {"dificulty": ["Facil", "Normal", "Difícil"],"music": [false, true],"time": [1, 1.5, 2],"distractors": [0, 1, 2, 3]}}',
+            'default_config' => '{"name": "Torre de Cubos","map": "MountainMap","config": {"dificulty": [{"label": "Facil","val": "Facil"},{"label": "Normal","val": "Normal"},{"label": "Dificil","val": "Dificil"}],"music": [{"label": "Si","val": true},{"label": "No","val": false}],"time": [{"label": "1 minutos","val": 1},{"label": "1.5 minutos","val": 1.5},{"label": "2 minutos","val": 2}],"distractors": [{"label": "0 distractores","val": 0},{"label": "1 distractores","val": 1},{"label": "2 distractores","val": 2},{"label": "3 distractores","val": 3}]}}',
         ]);
 
         // Patient::factory(200)->create();

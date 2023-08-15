@@ -14,6 +14,11 @@ class GameResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'default_config' => json_decode($this->default_config),
+            'name' => $this->name,
+            'created_at' => $this->created_at
+        ];
     }
 }

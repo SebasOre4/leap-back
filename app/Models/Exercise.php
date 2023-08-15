@@ -11,7 +11,7 @@ class Exercise extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['treatment_id', 'game_id', 'game_config'];
+    protected $fillable = ['id', 'treatment_id', 'game_id', 'game_config', "game_result"];
 
     public function treatment(): BelongsTo
     {

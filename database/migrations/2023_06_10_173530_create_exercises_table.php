@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('treatment_id')->references('id')->on('treatments');
             $table->foreignId('game_id')->references('id')->on('games');
             $table->json('game_config');
+            $table->json('game_result')->nullable();
             $table->timestamps();
         });
     }

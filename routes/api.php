@@ -3,6 +3,8 @@
 use App\Http\Controllers\Api\V1\PatientController;
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\DiagnosisController;
+use App\Http\Controllers\Api\V1\ExerciseController;
+use App\Http\Controllers\Api\V1\GameController;
 use App\Http\Controllers\Api\V1\TreatmentController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +52,12 @@ Route::prefix('v1')->group(function () {
         Route::put('treatment/{treatment}', [TreatmentController::class, 'updateTreatment']);
 
         Route::get('treatment-history/{patient}', [TreatmentController::class, 'treatmentHistory']);
+
+        Route::get('exercises/{treatment}', [ExerciseController::class, 'getByTreatment']);
+
+        Route::post('exercises/{treatment}', [ExerciseController::class, 'saveGameTreatments']);
+
+        Route::get('games', [GameController::class, 'index']);
 
         Route::get('dash-graphs', [AuthController::class, 'docDashInfo']);
     });

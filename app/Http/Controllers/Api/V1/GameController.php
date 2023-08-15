@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
+use App\Http\Resources\GameResource;
 use App\Models\Game;
 
 class GameController extends BaseController
@@ -13,7 +14,11 @@ class GameController extends BaseController
      */
     public function index()
     {
-        //
+        try {
+            return GameResource::collection(Game::orderBy('id', 'ASC')->get());
+        } catch (\Throwable $th) {
+            return $this->sendError('Ups :/', ['error' => 'Algo salio mal, intentalo más tarde', 'msg' => $th], 500);
+        }
     }
 
     /**

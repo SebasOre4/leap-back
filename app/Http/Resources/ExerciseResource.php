@@ -14,6 +14,9 @@ class ExerciseResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'config' => json_decode($this->game_config),
+            'game_id' => $this->game_id
+        ];
     }
 }
