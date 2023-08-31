@@ -56,19 +56,21 @@ class AuthController extends BaseController
         $treatmentsInYear = Treatment::select(
             DB::raw("(COUNT(id)) as count"),
             DB::raw("(DATE_FORMAT(created_at, '%Y-%m')) as month_year")
-        )->where('current', false)->whereNotNull('final_diagnoses_id')->whereBetween('created_at', [now()->subYear(), now()])->orderBy('month_year', 'ASC')
+        )->whereHas('patient', function ($q) {
+            $q->where('user_id', Auth::user()->id);
+        })->where('current', false)->whereNotNull('final_diagnoses_id')->whereBetween('created_at', [now()->subYear(), now()])->orderBy('month_year', 'ASC')
             ->groupBy("month_year")
             ->get();
         $malesInYear = Patient::select(
             DB::raw("(COUNT(id)) as count"),
             DB::raw("(DATE_FORMAT(created_at, '%Y-%m')) as month_year")
-        )->where('genre', 'M')->whereBetween('created_at', [now()->subYear(), now()])->orderBy('month_year', 'ASC')
+        )->where('user_id', Auth::user()->id)->where('genre', 'M')->whereBetween('created_at', [now()->subYear(), now()])->orderBy('month_year', 'ASC')
             ->groupBy("month_year")
             ->get();
         $femalesInYear = Patient::select(
             DB::raw("(COUNT(id)) as count"),
             DB::raw("(DATE_FORMAT(created_at, '%Y-%m')) as month_year")
-        )->where('genre', 'F')->whereBetween('created_at', [now()->subYear(), now()])->orderBy('month_year', 'ASC')
+        )->where('user_id', Auth::user()->id)->where('genre', 'F')->whereBetween('created_at', [now()->subYear(), now()])->orderBy('month_year', 'ASC')
             ->groupBy("month_year")
             ->get();
 
@@ -76,7 +78,10 @@ class AuthController extends BaseController
             'diagnoses.result',
             DB::raw("(COUNT(diagnoses.id)) as count"),
             DB::raw("(DATE_FORMAT(diagnoses.created_at, '%Y-%m')) as month_year")
-        )->join('treatments', 'treatments.initial_diagnoses_id', '=', 'diagnoses.id')->orderBy('month_year', 'ASC')
+        )->join('treatments', 'treatments.initial_diagnoses_id', '=', 'diagnoses.id')
+            ->join('patients', 'patients.id', '=', 'treatments.patient_id')
+            ->where('patients.user_id', Auth::user()->id)
+            ->orderBy('month_year', 'ASC')
             ->groupBy(["diagnoses.result", "month_year"])
             ->get();
 
@@ -84,7 +89,10 @@ class AuthController extends BaseController
             'diagnoses.result',
             DB::raw("(COUNT(diagnoses.id)) as count"),
             DB::raw("(DATE_FORMAT(diagnoses.created_at, '%Y-%m')) as month_year")
-        )->join('treatments', 'treatments.final_diagnoses_id', '=', 'diagnoses.id')->orderBy('month_year', 'ASC')
+        )->join('treatments', 'treatments.final_diagnoses_id', '=', 'diagnoses.id')
+            ->join('patients', 'patients.id', '=', 'treatments.patient_id')
+            ->where('patients.user_id', Auth::user()->id)
+            ->orderBy('month_year', 'ASC')
             ->groupBy(["diagnoses.result", "month_year"])
             ->get();
 

@@ -8,6 +8,7 @@ use App\Http\Resources\TreatmentResource;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use App\Models\Treatment;
+use Illuminate\Support\Facades\Auth;
 
 class TreatmentController extends BaseController
 {
@@ -33,7 +34,7 @@ class TreatmentController extends BaseController
         $fullname = $request->get('fullname');
         $nhc = $request->get('nhc');
         return TreatmentResource::collection(Treatment::where('current', true)->where('final_diagnoses_id', null)->whereHas('patient', function ($q) use ($fullname, $nhc) {
-            $q->fullname($fullname)->nhc($nhc);
+            $q->where('user_id', Auth::user()->id)->fullname($fullname)->nhc($nhc);
         })->with('patient')->orderBy('created_at', 'DESC')->paginate(10));
     }
 
